@@ -6,12 +6,12 @@ def wget(url):
     with open(url[url.rfind('/') + 1::], 'wb') as f:
         f.write(r.content)
 
-wget("https://raw.githubusercontent.com/IEEESBITBA/Curso-Python/master/Curso_Analisis_de_Datos_Datos/california_housing_train.xlsx")
+wget("https://raw.githubusercontent.com/IEEESBITBA/Curso-Python/master/Curso_Analisis_de_Datos_Datos/lista_final.csv")
 #%% LEECTURA DE ARCHIVOS
 import pandas as pd
 
 #Leemos el archivo xlsx 
-archivo = pd.read_excel('Datos.xlsx')
+archivo = pd.read_excel('excels/Datos.xlsx')
 print(archivo,'\n')
 print(archivo.loc[0]) #loc me devuelve una fila
 
@@ -28,7 +28,7 @@ print(data[2])            # Accedemos a los datos de una fila
 print(data[2]['Nombre'],'\n')  # Accedemos a la columna 'Nombres' de la fila con índice 2
 
 # Indicamos que la columna de indexación será apellido.
-archivo = pd.read_excel("Datos.xlsx", index_col ="Apellido") 
+archivo = pd.read_excel("excels/Datos.xlsx", index_col ="Apellido") 
 print(archivo,'\n')
 
 data = archivo.to_dict("index") #index nos devuelve un diccionario de diccionarios en el que cada uno tiene como palabre clave el apellido
@@ -50,9 +50,9 @@ print(df,'\n')
 
 #%%
 import pandas as pd
-df.to_excel('personas.xlsx') #Crea un archivo excel si no existe y sino lo sobrescribe
+df.to_excel('excels/personas.xlsx') #Crea un archivo excel si no existe y sino lo sobrescribe
 
-datos = pd.read_excel("Datos.xlsx") 
+datos = pd.read_excel("excels/Datos.xlsx") 
 print(datos,'\n')
 
 print(datos['Quimica']) #Accedemos a la columna 'Quimica'
@@ -63,7 +63,7 @@ print(alumno['Matematica']) #Accedemos a la fila y columna deseada
 #%% SELECCIONAR CIERTAS PARTES DE DF
 import pandas as pd
 
-datos = pd.read_excel("Datos.xlsx") 
+datos = pd.read_excel("excels/Datos.xlsx") 
 print("Datos:\n")
 print(datos)
 
@@ -75,9 +75,7 @@ print(aprobados)
 #%% SELECCIONAR CIERTAS PARTES DE DF
 import pandas as pd
 
-import pandas as pd
-
-datos2 = pd.read_excel("Datos2.xlsx") 
+datos2 = pd.read_excel("excels/Datos2.xlsx") 
 print("Datos:\n")
 print(datos2,'\n')
 
